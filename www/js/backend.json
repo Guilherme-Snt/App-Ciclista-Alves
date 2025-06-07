@@ -1,0 +1,161 @@
+[
+    {
+        "id": 1,
+        "imagem": "img/camara.png",
+        "nome": "Câmara De Ar",
+        "principal_caracteristica": "Branco",
+        "rating": 4.5,
+        "likes": "91%",
+        "reviews": 25,
+        "descricao": "Válvula tipo Schrader.",
+        "detalhes": [
+            {
+                "caracteristica": "Marca",
+                "detalhes": "Kenda"
+            },
+            {
+                "caracteristica": "Modelo",
+                "detalhes": "MTB 26"
+            },
+           
+            {
+                "caracteristica": "Aro",
+                "detalhes": "26"
+            },
+            {
+                "caracteristica": "Largura do pneu",
+                "detalhes": "1,9/2.125"
+            },
+            {
+                "caracteristica": "Tipo do câmera do pneu",
+                "detalhes": "butyl"
+            },
+            {
+                "caracteristica": "Material",
+                "detalhes": "Borracha"
+            },
+            {
+                "caracteristica": "Tipo da válvula",
+                "detalhes": "Schrader"
+            }
+        ],
+        "preco": 29.99,
+        "preco_promocional": 24.99
+    },
+    {
+        "id": 2,
+        "imagem": "img/cubo.png",
+        "nome": "Par De Cubos Bicicleta",
+        "principal_caracteristica": "Posição dianteira e traseira.",
+        "rating": 3.8,
+        "likes": "94%",
+        "reviews": 15,
+        "descricao": "Par de Cubos viper Rolling em Aluminio com Rolamento para Freio V-break.",
+        "detalhes": [
+            {
+                "caracteristica": "Posição",
+                "detalhes": "Dianteiro e Traseiro"
+            },
+            {
+                "caracteristica": "Unidades por kit 2",
+                "detalhes": "2"
+            },
+            {
+                "caracteristica": "Quantidade Furos",
+                "detalhes": "36"
+            },
+            {
+                "caracteristica": "Material",
+                "detalhes": "Alumínio"
+            },
+            {
+                "caracteristica": "Tipo de rolamento",
+                "detalhes": "De esferas"
+            },
+            {
+                "caracteristica": "inclui eixo",
+                "detalhes": "Sim"
+            },
+            {
+                "caracteristica": "Diâmetro do eixo",
+                "detalhes": "9 mm"
+            },
+            {
+                "caracteristica": "Comprimento do eixo",
+                "detalhes": "20 cm"
+            },
+            {
+                "caracteristica": "Peso total",
+                "detalhes": "800 g"
+            }
+        ],
+        "preco": 39.99,
+        "preco_promocional": 34.99
+    },
+    {
+        "id": 3,
+        "imagem": "img/Pneus.png",
+        "nome": "Par 2 Pneu Bike 26x2.00 ",
+        "principal_caracteristica": "Levorin Excess",
+        "rating": 4.5,
+        "likes": "96%",
+        "reviews": 25,
+        "descricao": "PAR PNEU BIKE 26X2.00 (52-559) LEVORIN EXCESS EX (DIANTEIRO E TRASEIRO)",
+        "detalhes": [
+            {
+                "caracteristica": "Marca",
+                "detalhes": "Levorin"
+            },
+            {
+                "caracteristica": "Modelo",
+                "detalhes": "Excess Ex"
+            },
+            {
+                "caracteristica": "Cor",
+                "detalhes": "Preto"
+            },
+            {
+                "caracteristica": "Diâmetro",
+                "detalhes": "66 cm"
+            },
+            {
+                "caracteristica": "Largura",
+                "detalhes": "5,08 cm"
+            }
+           
+        ],
+        "preco": 159.99,
+        "preco_promocional": 129.99
+    },
+    {
+        "id": 4,
+        "imagem": "img/Cabos.png",
+        "nome": "Kit 10 Cabos Aço Cambio Dianteiro Traseiro",
+        "principal_caracteristica": "1.2 X 1900",
+        "rating": 4.8,
+        "likes": "89%",
+        "reviews": 30,
+        "descricao": "Kit com 10 cabos de Aço para Câmbio Dianteiro e Traseiro.",
+        "detalhes": [
+            {
+                "caracteristica": "Marca",
+                "detalhes": "PACO GURSAN ORIGINAL REBECHI BIKES"
+            },
+            {
+                "caracteristica": "Material",
+                "detalhes": "Aço"
+            },
+            {
+                "caracteristica": "Comprimento",
+                "detalhes": "1,9m"
+            },
+            {
+                "caracteristica": "Diâmetro",
+                "detalhes": "1,2 mm"
+            }
+           
+        ],
+        "preco": 29.99,
+        "preco_promocional": 24.99
+    }
+]

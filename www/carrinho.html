@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar (Android only) -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Ciclista Alves</title>
+    <!-- Path to Framework7 Library Bundle CSS -->
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css">
+    <!-- CSS PERSONALIZADO PARA MENU-->
+    <link rel="stylesheet" href="css/index.css">
+    <!--Ícones Material Design-->
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+    <!--Ícones do Remix icon-->
+    <link rel="stylesheet" href="css/remixicon/remixicon.css">
+</head>
+
+<body>
+    <!-- App root element -->
+    <div id="app">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="carrinho" class="page color-theme-blue">
+                <header class="nav-top cart">
+                    <a href="/index/"><i class="ri-arrow-left-wide-line"></i></a>
+                    <strong><i class="ri-shopping-cart-2-line"></i> Carrinho</strong>
+                    <a href="#" class="link popover-open" data-popover=".popover-menu"><i class="ri-more-fill"></i></a>
+                </header>
+                <div class="popover popover-menu">
+                    <div class="popover-angle"></div>
+                    <div class="popover-inner">
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <a id="esvaziar" href="#" class="list-button popover-close">
+                                        <i class="mdi mdi-broom"></i> Esvaziar Carrinho
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB BAR Totais -->
+                <div id="toolbarTotais" style="margin-bottom: 100px;" class="toolbar toolbar-bottom">
+                    <div id="totais" class="toolbar-inner display-flex align-items-center justify-content-center">
+                        <div class="bd-bottom margin-top w-80 display-flex justify-content-space-between">
+                            <span>Subtotal</span>
+                            <span id="subtotal" class="bold">R$ 39.99</span>
+                        </div>
+                        <div class="w-80 display-flex justify-content-space-between">
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB BAR Checkout -->
+                <div id="toolbarCheckout" class="toolbar toolbar-bottom">
+                    <div class="toolbar-inner display-flex align-items-center justify-content-center">
+                        <div class="flex-100">
+                            
+                            <button class="add-cart">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scrollable page content -->
+                <main class="page-content">
+                    <div id="listaCarrinho">
+                        <!--ITEM DO CARRINHO-->
+                        <div class="item-carrinho">
+                            <div class="area-img">
+                                <img src="img/default.png" alt="Imagem do produto">
+                            </div>
+                            <div class="area-details">
+                                <div class="sup">
+                                    <span class="name-prod">Camara de ar</span>
+                                    <button class="delete-item" aria-label="Remover item">
+                                        <i class="mdi mdi-close"></i>
+                                    </button>
+                                </div>
+                                <div class="middle">
+                                    <span>Aro 20</span>
+                                </div>
+                                <div class="preco-quantidade">
+                                    <span class="preco">99.99</span>
+                                    <div class="count">
+                                        <button type="button" class="minus" aria-label="Diminuir quantidade">-</button>
+                                        <input readonly class="qtd-item" type="text" value="1">
+                                        <button type="button" class="plus" aria-label="Aumentar quantidade">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-carrinho">
+                            <div class="area-img">
+                                <img src="img/camara.png" alt="Imagem do produto">
+                            </div>
+                            <div class="area-details">
+                                <div class="sup">
+                                    <span class="name-prod">Camara de ar</span>
+                                    <button class="delete-item" aria-label="Remover item">
+                                        <i class="mdi mdi-close"></i>
+                                    </button>
+                                </div>
+                                <div class="middle">
+                                    <span>Aro 20</span>
+                                </div>
+                                <div class="preco-quantidade">
+                                    <span class="preco">99.99</span>
+                                    <div class="count">
+                                        <button type="button" class="minus" aria-label="Diminuir quantidade">-</button>
+                                        <input readonly class="qtd-item" type="text" value="1">
+                                        <button type="button" class="plus" aria-label="Aumentar quantidade">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <!-- Cordova (carregue apenas em ambiente mobile) -->
+    <script src="cordova.js"></script>
+
+    <!-- Script para manipulação do carrinho -->
+    <script>
+    $(document).ready(function() {
+        // Incrementar quantidade
+        $('#listaCarrinho').on('click', '.plus', function() {
+            let $input = $(this).siblings('.qtd-item');
+            let val = parseInt($input.val());
+            $input.val(val + 1);
+            atualizarSubtotal();
+        });
+
+        // Decrementar quantidade
+        $('#listaCarrinho').on('click', '.minus', function() {
+            let $input = $(this).siblings('.qtd-item');
+            let val = parseInt($input.val());
+            if (val > 1) {
+                $input.val(val - 1);
+                atualizarSubtotal();
+            }
+        });
+
+        // Remover item do carrinho
+        $('#listaCarrinho').on('click', '.delete-item', function() {
+            $(this).closest('.item-carrinho').remove();
+            atualizarSubtotal();
+        });
+
+        // Esvaziar carrinho
+        $('#esvaziar').on('click', function() {
+            $('#listaCarrinho').empty();
+            atualizarSubtotal();
+        });
+
+        // Atualizar subtotal
+        function atualizarSubtotal() {
+            let subtotal = 0;
+            $('#listaCarrinho .item-carrinho').each(function() {
+                let preco = parseFloat($(this).find('.preco').text().replace(',', '.'));
+                let qtd = parseInt($(this).find('.qtd-item').val());
+                subtotal += preco * qtd;
+            });
+            $('#subtotal').text('R$ ' + subtotal.toFixed(2));
+        }
+    });
+    </script>
+</body>
+</html>
